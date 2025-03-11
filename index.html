@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Kurs Planlaması</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+      .green {
+        background-color: green !important;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Kurs Planlaması</header>
+    <div class="container" id="app">
+      <div class="course--planner-app--container">
+        <div class="card">
+          <div class="user--action--container">
+            <div class="form-group">
+              <label>Kursun Adı</label>
+              <input type="text" />
+            </div>
+
+            <button class="btn-primary">Kurs Ekle</button>
+          </div>
+          <small class="text-danger">Lütfen Bir Kurs İsmi giriniz...</small>
+        </div>
+        <div class="card card-light mt-20">
+          <h3>Aktif Kurslarım</h3>
+          <ul class="list mt-20">
+            <li class="course-item list-item bg-danger">
+              <span>course.name</span>
+              <input type="checkbox" />
+            </li>
+            <li class="course-item list-item bg-danger">
+              <span>React.js</span>
+
+              <input type="checkbox" />
+            </li>
+          </ul>
+        </div>
+        <div class="mt-10">
+          <small>İzlenecek {{courses.length}} adet kursunuz var.</small>
+        </div>
+      </div>
+    </div>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            message: false,
+            course: {
+              id: null,
+              name: "",
+              status: false,
+            },
+
+            courses: [],
+          };
+        },
+        methods: {},
+      }).mount("#app");
+    </script>
+  </body>
+</html>
